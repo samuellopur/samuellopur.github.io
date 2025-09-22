@@ -415,12 +415,61 @@ document.addEventListener('DOMContentLoaded', () => {
     new CVDownloader();
     new ContactEnhancer();
     new PerformanceOptimizer();
+    new ResponsiveHandler();
     
     // Add loaded class to body for CSS animations
     document.body.classList.add('loaded');
     
     console.log('Portfolio website initialized successfully!');
 });
+
+// Responsive Handler para mejorar la experiencia en diferentes tamaños
+class ResponsiveHandler {
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        this.handleResize();
+        window.addEventListener('resize', Utils.debounce(() => this.handleResize(), 250));
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => this.handleResize(), 100);
+        });
+    }
+    
+    handleResize() {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        
+        // Agregar clases según el tamaño de pantalla
+        document.body.classList.remove('mobile', 'tablet', 'desktop');
+        
+        if (windowWidth <= 480) {
+            document.body.classList.add('mobile');
+        } else if (windowWidth <= 768) {
+            document.body.classList.add('tablet');
+        } else {
+            document.body.classList.add('desktop');
+        }
+        
+        // Ajustar viewport height en móviles
+        if (windowWidth <= 768) {
+            document.documentElement.style.setProperty('--vh', `${windowHeight * 0.01}px`);
+        }
+        
+        // Cerrar menú móvil si se cambia a desktop
+        if (windowWidth > 768) {
+            const navMenu = document.querySelector('.nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (navMenu && hamburger) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    }
+}
 
 // Handle window resize events
 window.addEventListener('resize', Utils.debounce(() => {

@@ -236,6 +236,7 @@ p {
 /* Hero Section */
 .hero {
     min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100); /* Fallback para móviles */
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
@@ -768,6 +769,36 @@ p {
 }
 
 /* Responsive Design */
+
+/* Tablets en landscape */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .hero-content {
+        gap: var(--spacing-xl);
+    }
+    
+    .profile-img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .education-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* Tablets en portrait */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -782,6 +813,7 @@ p {
         opacity: 0;
         visibility: hidden;
         transition: var(--transition);
+        z-index: 999;
     }
     
     .nav-menu.active {
@@ -802,6 +834,7 @@ p {
     
     .hero-buttons {
         justify-content: center;
+        flex-wrap: wrap;
     }
     
     .timeline::before {
@@ -822,10 +855,12 @@ p {
     
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
     
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-lg);
     }
     
     .education-grid {
@@ -835,11 +870,13 @@ p {
     .contact-buttons {
         flex-direction: column;
         align-items: center;
+        gap: var(--spacing-md);
     }
     
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: var(--spacing-lg);
     }
     
     .footer-brand {
@@ -849,34 +886,145 @@ p {
     .footer-social {
         justify-content: center;
     }
+    
+    /* Ajustes de padding para tablets */
+    .section-title {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .hero, .about, .experience, .projects, .skills, .education, .contact {
+        padding: var(--spacing-xl) 0;
+    }
 }
 
+/* Móviles pequeños */
 @media (max-width: 480px) {
     .container {
         padding: 0 var(--spacing-md);
     }
     
+    .nav-container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .nav-name {
+        font-size: 1rem;
+    }
+    
     .profile-img {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
     }
     
     .hero-buttons {
         flex-direction: column;
         width: 100%;
+        gap: var(--spacing-md);
     }
     
     .btn {
         justify-content: center;
         width: 100%;
+        padding: var(--spacing-md);
     }
     
     .project-links {
         flex-direction: column;
+        gap: var(--spacing-sm);
     }
     
     .contact-buttons {
         gap: var(--spacing-md);
+        width: 100%;
+    }
+    
+    .contact-buttons .btn {
+        width: 100%;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-tags {
+        gap: var(--spacing-xs);
+    }
+    
+    .tag {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    .skill-tag {
+        font-size: 0.8rem;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    /* Reducir espaciado en móviles */
+    .hero, .about, .experience, .projects, .skills, .education, .contact {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .section-title {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .timeline-content {
+        padding: var(--spacing-lg);
+    }
+    
+    .project-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .skill-category {
+        padding: var(--spacing-lg);
+    }
+    
+    .education-card {
+        padding: var(--spacing-lg);
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+    .profile-img {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .nav-container {
+        height: 60px;
+    }
+    
+    .navbar {
+        height: 60px;
+    }
+    
+    .hero {
+        padding-top: 60px;
+    }
+    
+    .nav-logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .footer-logo {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -900,5 +1048,90 @@ p {
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
+    }
+}
+
+/* Utilidades responsivas */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Clases para ocultar/mostrar en diferentes tamaños */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+    
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .hide-desktop {
+        display: none !important;
+    }
+    
+    .show-desktop {
+        display: block !important;
+    }
+}
+
+/* Mejoras de accesibilidad y UX */
+@media (hover: none) and (pointer: coarse) {
+    /* Estilos para dispositivos táctiles */
+    .btn:hover {
+        transform: none;
+    }
+    
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .skill-category:hover {
+        transform: none;
+    }
+}
+
+/* Mejor contraste en modo alto contraste */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+        --shadow-light: 0 2px 4px rgba(0,0,0,0.5);
+        --shadow-medium: 0 4px 8px rgba(0,0,0,0.6);
+        --shadow-heavy: 0 8px 16px rgba(0,0,0,0.7);
+    }
+}
+
+/* Orientación landscape en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .navbar {
+        height: 60px;
+    }
+    
+    .nav-container {
+        height: 60px;
+    }
+    
+    .hero {
+        padding-top: 60px;
     }
 }
