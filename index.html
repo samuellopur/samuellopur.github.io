@@ -1,96 +1,484 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Portafolio</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel López - Desarrollador Full Stack Java</title>
+    <meta name="description" content="Portfolio profesional de Samuel López, desarrollador Full Stack Java especializado en Spring Boot, Angular, MySQL y tecnologías web modernas.">
+    <meta name="keywords" content="Java Developer, Spring Boot, Full Stack, Angular, MySQL, JavaScript, HTML, CSS, Portfolio">
+    <meta name="author" content="Samuel López">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Samuel López - Desarrollador Full Stack Java">
+    <meta property="og:description" content="Portfolio profesional de Samuel López, desarrollador Full Stack Java especializado en Spring Boot, Angular y MySQL.">
+    <meta property="og:image" content="https://samuellopur.github.io/samuellop.jpg">
+    <meta property="og:url" content="https://samuellopur.github.io/">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="samuellop.jpg">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Botón modo claro/oscuro en la esquina superior derecha -->
-  <button id="theme-toggle" aria-label="Cambiar modo" title="Cambiar modo">
-    <span id="theme-icon">🌙</span>
-  </button>
-
-  <!-- Barra lateral -->
-  <aside class="sidebar">
-    <div class="profile">
-      <!-- Foto de perfil -->
-      <img src="samuellop.jpg" alt="Mi foto" class="foto">
-      <h2>Samuel López</h2>
-      <p>Fullstack Java Developer</p>
-    </div>
-    <!-- Menú de navegación -->
-    <nav>
-      <ul>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#portfolio">Portafolio</a></li>
-        <li><a href="#about">Acerca de mí</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="samuellop.jpg" alt="Samuel López" class="nav-logo">
+                <span class="nav-name">Samuel López</span>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#educacion" class="nav-link">Educación</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
-  </aside>
 
-  <!-- Contenido principal -->
-  <main>
-    <!-- Sección Home -->
-    <section id="home">
-      <h1>Hola, soy Samuel</h1>
-      <p>"Construyo soluciones digitales eficientes y escalables, impulsado por mi pasión por el desarrollo Fullstack en Java."</p>
-    </section>
-
-    <!-- Sección Portafolio -->
-    <section id="portfolio">
-      <h2>Mi Portafolio</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Proyecto 1</h3>
-          <p>Aplicación CRUD en Java con Spring Boot.</p>
-          <a href="https://samuellopur.github.io/proyecto_cac_lff/index.html" target="_blank">Ver proyecto</a>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="samuellop.jpg" alt="Samuel Alexander López Urueña" class="profile-img">
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">Samuel Alexander López Urueña</h1>
+                    <h2 class="hero-subtitle">Desarrollador Full Stack Java</h2>
+                    <p class="hero-location">
+                        <i class="bi bi-geo-alt"></i>
+                        Mosquera, Cundinamarca - Colombia
+                    </p>
+                    <p class="hero-description">
+                        Desarrollador Backend especializado en Spring Boot, bases de datos relacionales y metodologías ágiles. 
+                        Con experiencia en desarrollo Full Stack y sólidas habilidades de liderazgo y trabajo en equipo.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                        <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+                        <a href="CV-Samuel_Lopez_V4.pdf" download="CV-Samuel_Lopez.pdf" class="btn btn-outline">
+                            <i class="bi bi-download"></i> Descargar CV
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card">
-          <h3>Proyecto 2</h3>
-          <p>Landing Page con HTML, CSS y JS.</p>
-          <a href="#">Ver proyecto</a>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Soy un desarrollador Backend especializado en <strong>Spring Boot</strong>, bases de datos relacionales, 
+                        Git/GitHub, con fundamentos sólidos en HTML, CSS y JavaScript. Manejo metodologías ágiles como 
+                        <strong>Scrum y Kanban</strong> y aplico principios <strong>SOLID</strong> para construir soluciones 
+                        escalables y de calidad.
+                    </p>
+                    <p>
+                        Mi experiencia previa como analista administrativo ha fortalecido mis habilidades blandas de 
+                        <strong>liderazgo, trabajo en equipo</strong>, orientación al detalle y comunicación asertiva, 
+                        complementando perfectamente mi perfil técnico.
+                    </p>
+                    <p>
+                        Estoy preparado para contribuir al éxito empresarial desarrollando aplicaciones web modernas, 
+                        seguras y funcionales que respondan a las necesidades del negocio y los usuarios, impulsando 
+                        la innovación tecnológica y la mejora continua.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Sección Acerca de mí -->
-    <section id="about">
-      <h2>Acerca de mí</h2>
-      <p>
-        Soy un desarrollador Fullstack Java en formación. Inicié mi camino con curiosidad por la programación y, con dedicación, he ido adquiriendo dominio en tecnologías como Java, Spring, HTML, CSS y JavaScript.
-      </p>
-      <p>
-        Me apasiona crear soluciones que generen valor para las personas y los negocios. Busco crecer en un equipo donde pueda aplicar lo aprendido, aportar mis conocimientos y seguir mejorando cada día
-      </p>
-      <p>
-        Disfruto resolver problemas con creatividad, aprender cada día nuevas habilidades y transmitir conocimiento para crecer junto a otros.
-      </p>
+    <!-- Experiencia -->
+    <section id="experiencia" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experiencia Laboral</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2023 - Feb 2024</div>
+                    <div class="timeline-content">
+                        <h3>Full Stack Java Developer</h3>
+                        <h4>Banco de Bogotá - Misión Temporal</h4>
+                        <p>
+                            Desarrollé aplicación web de gestión de productos empleando tecnologías modernas como 
+                            Spring Boot, API REST, Angular y MySQL, garantizando un diseño funcional, escalable y eficiente.
+                        </p>
+                        <ul class="achievements">
+                            <li>Desarrollé aplicación completa de gestión de productos en 2 meses</li>
+                            <li>Implementé API REST robusta con Spring Boot</li>
+                            <li>Integré frontend Angular con backend Java</li>
+                            <li>Gestioné base de datos MySQL con JPA/Hibernate</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Ene 2011 - Jul 2022</div>
+                    <div class="timeline-content">
+                        <h3>Analista Administrativo</h3>
+                        <h4>Pvc Gerfor - Cota, Colombia</h4>
+                        <p>
+                            Gestión integral de procesos administrativos, elaboración de presupuestos y negociación 
+                            estratégica con proveedores para optimización de recursos empresariales.
+                        </p>
+                        <ul class="achievements">
+                            <li>Elaboré presupuestos optimizando asignación de recursos y eficiencia financiera</li>
+                            <li>Generé informes para toma de decisiones estratégicas orientadas a reducción de costos</li>
+                            <li>Lideré negociaciones logrando reducción del 40% en costos anuales de servicios móviles</li>
+                            <li>Gestioné cupos de crédito optimizando tiempos de entrega y condiciones de pago</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Sección CV -->
-    <section id="cv">
-      <h2>Mi CV</h2>
-      <p>Descargar CV actualizado aquí:</p>
-      <a href="CV-Samuel_Lopez_V4.pdf" download class="btn">Descargar CV</a>
+    <!-- Proyectos -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2 class="section-title">Mis Proyectos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Sistema de Inventario - Banco de Bogotá</h3>
+                        <div class="project-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">Angular</span>
+                            <span class="tag">MySQL</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Aplicación empresarial de gestión de productos desarrollada durante mi experiencia en el 
+                        Banco de Bogotá. Sistema completo con API REST, frontend responsive y base de datos optimizada.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://samuellopur.github.io/proyecto_cac_lff/index.html" target="_blank" class="btn btn-primary">
+                            <i class="bi bi-eye"></i> Ver Demo
+                        </a>
+                        <a href="https://github.com/samuellopur" target="_blank" class="btn btn-secondary">
+                            <i class="bi bi-github"></i> Código
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Landing Page Responsive</h3>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Página web moderna y completamente responsive con animaciones CSS avanzadas, interactividad 
+                        JavaScript y diseño mobile-first optimizado para todos los dispositivos.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">
+                            <i class="bi bi-eye"></i> Ver Proyecto
+                        </a>
+                        <a href="https://github.com/samuellopur" target="_blank" class="btn btn-secondary">
+                            <i class="bi bi-github"></i> Código
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Portfolio Personal</h3>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Este portfolio profesional que estás visitando. Desarrollado con HTML semántico, 
+                        CSS moderno con variables personalizadas y JavaScript vanilla para máximo rendimiento.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://samuellopur.github.io/" target="_blank" class="btn btn-primary">
+                            <i class="bi bi-eye"></i> Ver en Vivo
+                        </a>
+                        <a href="https://github.com/samuellopur/samuellopur.github.io" target="_blank" class="btn btn-secondary">
+                            <i class="bi bi-github"></i> Código
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Sección Contacto -->
-    <section id="contact">
-      <h2>Contacto</h2>
-      <p><strong>Correo:</strong> samuellopez0112@gmail.com</p>
-      <p><strong>Ubicación:</strong> Mosquera, Cundinamarca</p>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/samuel-lópez-urueña-desarrollador-backend" target="_blank">LinkedIn</a>
-        <a href="https://github.com/samuellopur" target="_blank">GitHub</a>
-        <a href="https://www.hackerrank.com/dashboard" target="_blank">HackerRank</a>
-      </div>
-    </section>
-  </main>
+    <!-- Habilidades -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="bi bi-server"></i>
+                    </div>
+                    <h3>Backend</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">API REST</span>
+                        <span class="skill-tag">Maven</span>
+                        <span class="skill-tag">JPA/Hibernate</span>
+                    </div>
+                </div>
 
-  <script src="script.js"></script>
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="bi bi-laptop"></i>
+                    </div>
+                    <h3>Frontend</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Bootstrap</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="bi bi-database"></i>
+                    </div>
+                    <h3>Bases de Datos</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">H2</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="bi bi-tools"></i>
+                    </div>
+                    <h3>Herramientas</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">IntelliJ IDEA</span>
+                        <span class="skill-tag">Postman</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="bi bi-diagram-3"></i>
+                    </div>
+                    <h3>Metodologías</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Scrum</span>
+                        <span class="skill-tag">Kanban</span>
+                        <span class="skill-tag">SOLID</span>
+                        <span class="skill-tag">Agile</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="bi bi-translate"></i>
+                    </div>
+                    <h3>Idiomas</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Español (Nativo)</span>
+                        <span class="skill-tag">Inglés (A1)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educación -->
+    <section id="educacion" class="education">
+        <div class="container">
+            <h2 class="section-title">Educación</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-date">Actualmente</div>
+                    <div class="education-content">
+                        <h3>Full Stack/Java Developer</h3>
+                        <h4>Generation Bogotá, Colombia</h4>
+                        <p>
+                            Programa intensivo de desarrollo Full Stack con enfoque en Java, Spring Boot, 
+                            bases de datos relacionales y metodologías ágiles.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-date">Jul 2021 - Dic 2021</div>
+                    <div class="education-content">
+                        <h3>Diplomado Gerencia de Proyectos</h3>
+                        <h4>Corporación Universitaria Minutos de Dios</h4>
+                        <p>
+                            Especialización en gestión de proyectos, metodologías ágiles y liderazgo de equipos 
+                            multidisciplinarios en entornos empresariales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-date">Jun 2016 - Dic 2021</div>
+                    <div class="education-content">
+                        <h3>Ingeniero Industrial</h3>
+                        <h4>Corporación Universitaria Minutos de Dios</h4>
+                        <p>
+                            Título profesional en Ingeniería Industrial con enfoque en optimización de procesos 
+                            y gestión empresarial eficiente.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-date">Feb 2012 - Dic 2015</div>
+                    <div class="education-content">
+                        <h3>Ingeniería de Sistemas</h3>
+                        <h4>Corporación Universitaria Minutos de Dios</h4>
+                        <p>
+                            6 semestres cursados, proporcionando base sólida en programación y desarrollo de 
+                            software con enfoque en soluciones tecnológicas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="education-date">Feb 2009 - Dic 2010</div>
+                    <div class="education-content">
+                        <h3>Tecnólogo en Contabilidad y Finanzas</h3>
+                        <h4>Servicio Nacional de Aprendizaje SENA</h4>
+                        <p>
+                            Formación técnica especializada en gestión financiera, contable y análisis 
+                            empresarial para toma de decisiones estratégicas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">¿Trabajamos Juntos?</h2>
+            <div class="contact-content">
+                <div class="contact-intro">
+                    <p>
+                        Estoy disponible para nuevas oportunidades y proyectos desafiantes. 
+                        Si buscas un desarrollador comprometido con la excelencia técnica y el trabajo en equipo, 
+                        ¡hablemos!
+                    </p>
+                </div>
+                <div class="contact-buttons">
+                    <a href="mailto:samuellopez0112@gmail.com" class="btn btn-primary">
+                        <i class="bi bi-envelope-fill"></i>
+                        Enviar Email
+                    </a>
+                    <a href="tel:+573123392622" class="btn btn-secondary">
+                        <i class="bi bi-telephone-fill"></i>
+                        Llamar Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="samuellop.jpg" alt="Samuel López" class="footer-logo">
+                        <div class="footer-info">
+                            <h3>Samuel Alexander López Urueña</h3>
+                            <p>Desarrollador Full Stack Java</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="bi bi-telephone-fill"></i>
+                            <a href="tel:+573123392622">+57 312 339 2622</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-envelope-fill"></i>
+                            <a href="mailto:samuellopez0112@gmail.com">samuellopez0112@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <span>Mosquera, Cundinamarca - Colombia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Redes Sociales</h4>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/samuel-lópez-urueña-desarrollador-backend" target="_blank" 
+                           class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/samuellopur" target="_blank" 
+                           class="social-link" aria-label="GitHub" title="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://www.hackerrank.com/dashboard" target="_blank" 
+                           class="social-link" aria-label="HackerRank" title="HackerRank">
+                            <i class="bi bi-code-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <div class="footer-links">
+                        <a href="#inicio">Inicio</a>
+                        <a href="#sobre-mi">Sobre Mí</a>
+                        <a href="#proyectos">Proyectos</a>
+                        <a href="#habilidades">Habilidades</a>
+                        <a href="#contacto">Contacto</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Samuel López. Desarrollado con <i class="bi bi-heart-fill"></i> y dedicación.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
